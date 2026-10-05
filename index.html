@@ -3,45 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sentinel OSINT – Privacy Policy</title>
+  <title>Sentinel – Field Intelligence – Privacy Policy</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; line-height: 1.6; }
     h1 { color: #0a84ff; }
     h2 { color: #333; margin-top: 32px; }
     p, li { color: #444; }
+    li { margin-bottom: 6px; }
     footer { margin-top: 60px; color: #999; font-size: 13px; }
   </style>
 </head>
 <body>
-  <h1>Sentinel OSINT Field Toolkit – Privacy Policy</h1>
-  <p><strong>Effective date:</strong> March 15, 2025</p>
-  <p>Sentinel OSINT Field Toolkit ("Sentinel", "the App") is designed for licensed private investigators, corporate security professionals, and investigative journalists. This Privacy Policy explains how we handle your data.</p>
-  <h2>1. Data We Collect</h2>
-  <p>Sentinel collects and stores the following data <strong>locally on your device only</strong>:</p>
+  <h1>Sentinel – Field Intelligence: Privacy Policy</h1>
+  <p><strong>Effective date:</strong> [DATE]</p>
+  <p>Sentinel – Field Intelligence ("Sentinel", "the App", "we") is an iPhone and iPad app for investigators, security professionals and other professionals doing lawful research. This policy explains what data the App handles, where it goes and what we keep.</p>
+
+  <h2>1. Data stored on your device</h2>
+  <p>Your cases, field notes, search history, saved briefs, audit log and settings are stored on your device in encrypted storage (AES-256 with HMAC-SHA256 integrity checks). The encryption keys are kept in the iOS Keychain and do not leave your device. We do not have access to this data, and there is no cloud sync.</p>
+  <p>The App also keeps a few items in the Keychain so that they survive reinstalling the App: a random install identifier, the trial start date and usage counters for trial and plan limits.</p>
+
+  <h2>2. Data sent to our server</h2>
+  <p>Some features need our server (hosted on Railway in the United States). Depending on what you use, the App sends:</p>
   <ul>
-    <li>Search queries and investigation records you create</li>
-    <li>Field notes and case files</li>
-    <li>Audit log entries for compliance purposes</li>
-    <li>App settings and preferences</li>
+    <li><strong>Wanted and sanctions checks:</strong> the name you search for, checked against our copies of the OFAC, UN, EU, BIS and Canadian sanctions lists, and forwarded to Interpol's public Red Notices service.</li>
+    <li><strong>AI features</strong> (Field Brief, Full Analysis, Web Brief, Case Intake, case reports, field note and timeline analysis): the search term and results, and, depending on the feature, the notes, case details or intake text you entered. If you link a search to a case, the Field Brief and Full Analysis include that case's field notes.</li>
+    <li><strong>Image Forensics:</strong> the image you choose, for metadata and integrity analysis.</li>
+    <li><strong>Other lookups:</strong> domains, vehicle VINs, court searches and IP threat checks are passed through our server to the services listed in section 4.</li>
+    <li><strong>Subscriptions:</strong> Apple's signed transaction data, so we can confirm your subscription.</li>
   </ul>
-  <h2>2. Data Storage and Security</h2>
-  <p>All data is encrypted on your device using AES-256-CBC encryption with HMAC-SHA256 integrity verification. Encryption keys are stored in the iOS Secure Enclave and never leave your device. We do not have access to your data.</p>
-  <h2>3. AI Features</h2>
-  <p>When you use AI-powered features (Pro subscription), your search queries are sent to our secure backend server for processing. Queries are not stored or used for training purposes. The AI service is powered by Anthropic Claude.</p>
-  <h2>4. Law Enforcement Database Checks</h2>
-  <p>When you perform searches, the App may query publicly available law enforcement databases including FBI Most Wanted and Interpol Red Notices. These queries are made directly to public APIs and are not logged by us.</p>
-  <h2>5. Subscription and Payments</h2>
-  <p>Subscription payments are processed by Apple through In-App Purchases. We do not collect or store payment information. Apple's privacy policy applies to all payment transactions.</p>
-  <h2>6. Data Sharing</h2>
-  <p>We do not sell, trade, or share your personal data with third parties. Your investigation data remains on your device at all times.</p>
-  <h2>7. Professional Use Requirement</h2>
-  <p>Sentinel is intended for licensed professionals only. Users are responsible for compliance with applicable laws including FCRA, DPPA, and state privacy laws when conducting investigations.</p>
-  <h2>8. Data Deletion</h2>
-  <p>You can delete all app data at any time through Settings → Security → Wipe All Data. Deleting the app removes all locally stored data.</p>
+  <p>Our server does not store your search terms, notes, images, prompts or AI responses, and does not write them to its logs.</p>
+
+  <h2>3. What our server keeps</h2>
+  <p>To enforce trial and plan limits, our server stores:</p>
+  <ul>
+    <li>your random install identifier with your lifetime trial usage counts,</li>
+    <li>for subscribers, Apple's original transaction ID with your plan level and monthly usage counts,</li>
+    <li>a daily total of AI costs.</li>
+  </ul>
+  <p>These records contain no names, search terms or case content. Our hosting provider may keep standard technical request logs, which can include your IP address.</p>
+
+  <h2>4. Third-party services</h2>
+  <p>To provide its features, the App or our server sends the data needed for each request to these services:</p>
+  <ul>
+    <li><strong>Anthropic (Claude):</strong> processes AI requests from our server. Web Brief also uses Anthropic's web search.</li>
+    <li><strong>Interpol</strong> public Red Notices service: names you search.</li>
+    <li><strong>FBI</strong> public Wanted API: the last name you search, sent directly from the App.</li>
+    <li><strong>SEC EDGAR and OpenCorporates:</strong> company names. <strong>Markbase:</strong> company names on the Company screen.</li>
+    <li><strong>Google Public DNS, crt.sh, ipapi.co, ip-api.com and ipinfo.io:</strong> domains and IP addresses you look up or monitor.</li>
+    <li><strong>NHTSA:</strong> vehicle VINs. <strong>CourtListener:</strong> court search terms.</li>
+    <li><strong>Have I Been Pwned:</strong> only the first 5 characters of a password hash, never the password itself.</li>
+    <li><strong>Reddit:</strong> usernames on the Social Media screen. <strong>Open-Meteo:</strong> coordinates on the Geo screen. <strong>MapLibre:</strong> map tiles for the area you view.</li>
+    <li><strong>Your own API keys:</strong> if you add your own keys for Tracerfy, Shodan, AbuseIPDB or GreyNoise, the related searches are sent to those services under your account.</li>
+    <li><strong>Apple:</strong> handles all payments. We never receive your payment details.</li>
+  </ul>
+  <p>Each service handles the data under its own privacy policy. Links to other websites that you open in your browser are governed by those websites.</p>
+
+  <h2>5. What we don't do</h2>
+  <ul>
+    <li>We don't sell or rent your data, and we don't share it for advertising.</li>
+    <li>The App contains no analytics, advertising or crash-reporting tools.</li>
+    <li>We don't track you across other apps or websites.</li>
+    <li>We don't use your data to train AI models.</li>
+  </ul>
+
+  <h2>6. Professional and lawful use</h2>
+  <p>Sentinel is for lawful professional research. It is not a consumer reporting agency and must not be used for employment, tenant, credit, insurance or other eligibility decisions. You are responsible for complying with applicable laws, including the FCRA, DPPA and state and provincial privacy laws.</p>
+  <p>Sentinel is not intended for anyone under 18.</p>
+
+  <h2>7. Your choices and rights</h2>
+  <ul>
+    <li>You can delete all data on your device at any time in <strong>Settings → Security → Wipe All Data</strong>, or by deleting the App. The Keychain items in section 1 may remain on the device after deleting the App.</li>
+    <li>You can choose not to use AI features or the lookups that send data to third parties.</li>
+    <li>Depending on where you live, including California and Canada, you may have the right to access or delete personal information we hold about you. Contact us and we will respond within the time required by law.</li>
+  </ul>
+
+  <h2>8. Changes</h2>
+  <p>If we change this policy, we will update the effective date above. Significant changes will also be noted in the App's release notes.</p>
+
   <h2>9. Contact</h2>
   <p>For privacy-related inquiries, contact us at: <a href="mailto:sentinelosintapp@protonmail.com">sentinelosintapp@protonmail.com</a></p>
+
   <footer>
-    <p>© 2025 Sentinel OSINT. All rights reserved.</p>
+    <p>© 2026 Sentinel – Field Intelligence. All rights reserved.</p>
   </footer>
 </body>
 </html>
