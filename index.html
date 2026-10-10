@@ -15,23 +15,26 @@
 </head>
 <body>
   <h1>Sentinel – Field Intelligence: Privacy Policy</h1>
-  <p><strong>Effective date:</strong> 5 October 2026</p>
+  <p><strong>Effective date:</strong> 10 October 2026</p>
   <p>Sentinel – Field Intelligence ("Sentinel", "the App", "we") is an iPhone and iPad app for investigators, security professionals and other professionals doing lawful research. This policy explains what data the App handles, where it goes and what we keep.</p>
 
   <h2>1. Data stored on your device</h2>
-  <p>Your cases, field notes, search history, saved briefs, audit log and settings are stored on your device in encrypted storage (AES-256 with HMAC-SHA256 integrity checks). The encryption keys are kept in the iOS Keychain and do not leave your device. We do not have access to this data, and there is no cloud sync.</p>
+  <p>Your cases, field notes, search history, saved briefs, audit log and settings are stored on your device in encrypted storage (AES-256-GCM authenticated encryption). The encryption keys are kept in the iOS Keychain and do not leave your device. We do not have access to this data, and there is no cloud sync.</p>
   <p>The App also keeps a few items in the Keychain so that they survive reinstalling the App: a random install identifier, the trial start date and usage counters for trial and plan limits.</p>
 
   <h2>2. Data sent to our server</h2>
   <p>Some features need our server (hosted on Railway in the United States). Depending on what you use, the App sends:</p>
   <ul>
     <li><strong>Wanted and sanctions checks:</strong> the name you search for, checked against our copies of the OFAC, UN, EU, BIS and Canadian sanctions lists, and forwarded to Interpol's public Red Notices service.</li>
-    <li><strong>AI features</strong> (Field Brief, Full Analysis, Web Brief, Case Intake, case reports, field note and timeline analysis): the search term and results, and, depending on the feature, the notes, case details or intake text you entered. If you link a search to a case, the Field Brief and Full Analysis include that case's field notes.</li>
-    <li><strong>Image Forensics:</strong> the image you choose, for metadata and integrity analysis.</li>
-    <li><strong>Other lookups:</strong> domains, vehicle VINs, court searches and IP threat checks are passed through our server to the services listed in section 4.</li>
+    <li><strong>AI features</strong> (Field Brief, Full Analysis, Web Brief, Case Intake, case reports, field note and timeline analysis, image forensics interpretation): the information you submit for that analysis &ndash; such as names, identifiers, findings and notes, depending on the feature, the search term and results, and the notes, case details or intake text you entered. If you link a search to a case, the Field Brief and Full Analysis include that case's field notes. For image analysis, the image's metadata and the results of the on-device forensic checks are sent; the image itself is not.</li>
+    <li><strong>Other lookups:</strong> domains, vehicle VINs and IP threat checks (and, in older versions of the App, court searches) are passed through our server to the services listed in section 4.</li>
     <li><strong>Subscriptions:</strong> Apple's signed transaction data, so we can confirm your subscription.</li>
   </ul>
-  <p>Our server does not store your search terms, notes, images, prompts or AI responses, and does not write them to its logs.</p>
+  <p>Sentinel does not keep your AI requests or AI responses on its server, and its application code does not write your notes, prompts or AI responses to its logs. Interpol Red Notice results may be cached in the server's memory for up to 1 hour, keyed by the name searched. Our hosting provider's infrastructure may record request URLs in its logs; for wanted, sanctions and other lookups these URLs can contain the name or identifier you searched for.</p>
+
+  <h2>2a. AI processing and your permission</h2>
+  <p>AI features are processed by Anthropic, PBC (United States), which provides the Claude AI models. Information is sent for AI processing only when you start an AI feature, and only after you have allowed AI data sharing. The App asks for your permission the first time you use an AI feature. You can withdraw it at any time in <strong>Settings → Privacy</strong>; the App then asks again before the next AI request. Declining sends nothing and uses none of your plan's allowance.</p>
+  <p>The FBI wanted search is sent directly from the App to api.fbi.gov. Interpol and sanctions-list checks go through our server.</p>
 
   <h2>3. What our server keeps</h2>
   <p>To enforce trial and plan limits, our server stores:</p>
@@ -40,7 +43,7 @@
     <li>for subscribers, Apple's original transaction ID with your plan level and monthly usage counts,</li>
     <li>a daily total of AI costs.</li>
   </ul>
-  <p>These records contain no names, search terms or case content. Our hosting provider may keep standard technical request logs, which can include your IP address.</p>
+  <p>These records contain no names, search terms or case content. Our hosting provider may keep standard technical request logs, which can include your IP address and the request URLs described above.</p>
 
   <h2>4. Third-party services</h2>
   <p>To provide its features, the App or our server sends the data needed for each request to these services:</p>
@@ -63,7 +66,7 @@
     <li>We don't sell or rent your data, and we don't share it for advertising.</li>
     <li>The App contains no analytics, advertising or crash-reporting tools.</li>
     <li>We don't track you across other apps or websites.</li>
-    <li>We don't use your data to train AI models.</li>
+    <li>Sentinel does not use your data to train AI models.</li>
   </ul>
 
   <h2>6. Professional and lawful use</h2>
@@ -73,7 +76,7 @@
   <h2>7. Your choices and rights</h2>
   <ul>
     <li>You can delete all data on your device at any time in <strong>Settings → Security → Wipe All Data</strong>, or by deleting the App. The Keychain items in section 1 may remain on the device after deleting the App.</li>
-    <li>You can choose not to use AI features or the lookups that send data to third parties.</li>
+    <li>You can choose not to use AI features or the lookups that send data to third parties, and you can withdraw your AI data-sharing permission at any time in Settings → Privacy.</li>
     <li>Depending on where you live, including California and Canada, you may have the right to access or delete personal information we hold about you. Contact us and we will respond within the time required by law.</li>
   </ul>
 
