@@ -15,7 +15,7 @@
 </head>
 <body>
   <h1>Sentinel – Field Intelligence: Privacy Policy</h1>
-  <p><strong>Effective date:</strong> 25 October 2026</p>
+  <p><strong>Effective date:</strong> 27 October 2026</p>
   <p>Sentinel – Field Intelligence ("Sentinel", "the App", "we") is an iPhone and iPad app for investigators, security professionals and other professionals doing lawful research. This policy explains what data the App handles, where it goes and what we keep.</p>
 
   <h2>1. Data stored on your device</h2>
@@ -37,12 +37,12 @@
 
   <h2>2a. AI processing and your permission</h2>
   <p>AI features are processed by Anthropic, PBC (United States), which provides the Claude AI models. Information is sent for AI processing only when you start an AI feature, and only after you have allowed AI data sharing. The App asks for your permission the first time you use an AI feature. You can withdraw it at any time in <strong>Settings → Privacy</strong>; the App then asks again before the next AI request. Declining sends nothing and uses none of your plan's allowance.</p>
-  <p>Some lookups are sent directly from the App to the service: the FBI wanted search, SEC EDGAR and Markbase company searches, Google Public DNS, IPinfo for Watch List IP checks, Open-Meteo, NHTSA recall checks (make, model and year), Apple Maps map tiles, and Shodan with your own key. Interpol, sanctions and screening checks, VIN decoding, password breach checks and AI requests go through our server.</p>
+  <p>Some lookups are sent directly from the App to the service: the FBI wanted search, SEC EDGAR and Markbase company searches, Google Public DNS, IPinfo for Watch List IP checks, Open-Meteo, NHTSA recall checks (make, model and year), Apple Maps map tiles, Apple geocoding for address search on the map, and Shodan with your own key. Interpol, sanctions and screening checks, VIN decoding, password breach checks and AI requests go through our server.</p>
 
   <h2>2b. Voice dictation, microphone and photos</h2>
   <p>Voice dictation (for example in Case Intake and Field Notes) uses Apple's Speech framework. The App uses the microphone only while you are dictating, after you have granted microphone and speech recognition permission. Your speech may be processed by Apple to convert it to text, under Apple's privacy policy. Sentinel does not receive or store the audio; the resulting text stays on your device unless you send it for AI processing as described above.</p>
   <p>The App accesses only the photos you choose, for Image Forensics. Reverse image search uses an image web address you enter, not your photos.</p>
-  <p>The map is provided by Apple Maps. Apple receives the map area you view and your IP address, under Apple's privacy policy. If you tap the location button and allow location access, your position is shown on the map on your device; as long as location access stays on, the map shows your position each time you open it. Sentinel does not store or send your location. The App does not use the camera. Face ID is handled on your device by iOS; Sentinel never receives biometric data.</p>
+  <p>The map is provided by Apple Maps. Apple receives the map area you view and your IP address, under Apple's privacy policy. If you tap the location button and allow location access, your position is shown on the map on your device; as long as location access stays on, the map shows your position each time you open it. Sentinel does not store or send your location. If you search for an address on the map, the address text is sent to Apple's geocoding service to find its location; Sentinel does not store the search text, but a pin you save keeps the name you give it (by default the searched address). The App does not use the camera. Face ID is handled on your device by iOS; Sentinel never receives biometric data.</p>
 
   <h2>3. What our server keeps</h2>
   <p>To enforce trial and plan limits and protect the service, our server stores:</p>
@@ -64,7 +64,7 @@
     <li><strong>IPinfo:</strong> IP addresses you look up or monitor, including the IP addresses of domains you look up, for country and network information. <strong>Google Public DNS and crt.sh:</strong> domains you look up. Older versions of the App also use ipapi.co and ip-api.com for IP lookups.</li>
     <li><strong>NHTSA:</strong> vehicle VINs, and the make, model and year of the vehicle to check recalls. <strong>CourtListener:</strong> court search terms in older versions of the App. The current version opens CourtListener in your browser instead.</li>
     <li><strong>Have I Been Pwned:</strong> only the first 5 characters of a password hash, never the password itself.</li>
-    <li><strong>Open-Meteo:</strong> coordinates on the Geo screen. <strong>Apple Maps:</strong> map tiles for the area you view. Versions older than 3.9.9 load map tiles from MapLibre's demo server.</li>
+    <li><strong>Open-Meteo:</strong> coordinates on the Geo screen. <strong>Apple Maps:</strong> map tiles for the area you view, and the address text you search on the map (Apple geocoding). Versions older than 3.9.9 load map tiles from MapLibre's demo server.</li>
     <li><strong>Your own API keys:</strong> if you add your own keys for Shodan, AbuseIPDB or GreyNoise, the related searches are sent to those services under your account. For AbuseIPDB and GreyNoise, the lookup and your API key are relayed through Sentinel's server to reach the service; they are not stored or logged by Sentinel's server application. The IP address is sent in the request body; in versions older than 3.9.9 it is part of the request URL, which our hosting provider's logs may record (see section 3). Your AbuseIPDB and GreyNoise API keys are sent in a header, not in the URL. Shodan is called directly from the App and takes the key as a query parameter of its own request address, so Shodan receives your key that way.</li>
     <li><strong>Apple:</strong> handles all payments, App Attest and DeviceCheck, and speech recognition for dictation. We never receive your payment details.</li>
     <li>Older versions of the App also sent data to OpenCorporates (company names), Reddit (usernames) and Tracerfy (searches made with your own key). The current version only links to OpenCorporates and Reddit and no longer uses Tracerfy.</li>
