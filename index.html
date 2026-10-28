@@ -15,7 +15,7 @@
 </head>
 <body>
   <h1>Sentinel – Field Intelligence: Privacy Policy</h1>
-  <p><strong>Effective date:</strong> 27 October 2026</p>
+  <p><strong>Effective date:</strong> 28 October 2026</p>
   <p>Sentinel – Field Intelligence ("Sentinel", "the App", "we") is an iPhone and iPad app for investigators, security professionals and other professionals doing lawful research. This policy explains what data the App handles, where it goes and what we keep.</p>
 
   <h2>1. Data stored on your device</h2>
@@ -37,7 +37,7 @@
 
   <h2>2a. AI processing and your permission</h2>
   <p>AI features are processed by Anthropic, PBC (United States), which provides the Claude AI models. Information is sent for AI processing only when you start an AI feature, and only after you have allowed AI data sharing. The App asks for your permission the first time you use an AI feature. You can withdraw it at any time in <strong>Settings → Privacy</strong>; the App then asks again before the next AI request. Declining sends nothing and uses none of your plan's allowance.</p>
-  <p>Some lookups are sent directly from the App to the service: the FBI wanted search, SEC EDGAR and Markbase company searches, Google Public DNS, IPinfo for Watch List IP checks, Open-Meteo, NHTSA recall checks (make, model and year), Apple Maps map tiles, Apple geocoding for address search on the map, and Shodan with your own key. Interpol, sanctions and screening checks, VIN decoding, password breach checks and AI requests go through our server.</p>
+  <p>Some lookups are sent directly from the App to the service: the FBI wanted search, SEC EDGAR and Markbase company searches, Google Public DNS, IPinfo for Watch List IP checks, Open-Meteo, NHTSA and Transport Canada recall checks (make, model and year; never the VIN), Apple Maps map tiles, Apple geocoding for address search on the map, and Shodan with your own key. Interpol, sanctions and screening checks, VIN decoding, password breach checks and AI requests go through our server.</p>
 
   <h2>2b. Voice dictation, microphone and photos</h2>
   <p>Voice dictation (for example in Case Intake and Field Notes) uses Apple's Speech framework. The App uses the microphone only while you are dictating, after you have granted microphone and speech recognition permission. Your speech may be processed by Apple to convert it to text, under Apple's privacy policy. Sentinel does not receive or store the audio; the resulting text stays on your device unless you send it for AI processing as described above.</p>
@@ -62,7 +62,7 @@
     <li><strong>FBI</strong> public Wanted API: the last name you search, sent directly from the App.</li>
     <li><strong>SEC EDGAR:</strong> company names. <strong>Markbase:</strong> company names on the Company screen.</li>
     <li><strong>IPinfo:</strong> IP addresses you look up or monitor, including the IP addresses of domains you look up, for country and network information. <strong>Google Public DNS and crt.sh:</strong> domains you look up. Older versions of the App also use ipapi.co and ip-api.com for IP lookups.</li>
-    <li><strong>NHTSA:</strong> vehicle VINs, and the make, model and year of the vehicle to check recalls. <strong>CourtListener:</strong> court search terms in older versions of the App. The current version opens CourtListener in your browser instead.</li>
+    <li><strong>NHTSA:</strong> vehicle VINs, and the make, model and year of the vehicle to check recalls. <strong>Transport Canada:</strong> the make and model of a Canadian vehicle to check recalls (the VIN is not sent; the model year is filtered in the App). <strong>CourtListener:</strong> court search terms in older versions of the App. The current version opens CourtListener in your browser instead.</li>
     <li><strong>Have I Been Pwned:</strong> only the first 5 characters of a password hash, never the password itself.</li>
     <li><strong>Open-Meteo:</strong> coordinates on the Geo screen. <strong>Apple Maps:</strong> map tiles for the area you view, and the address text you search on the map (Apple geocoding). Versions older than 3.9.9 load map tiles from MapLibre's demo server.</li>
     <li><strong>Your own API keys:</strong> if you add your own keys for Shodan, AbuseIPDB or GreyNoise, the related searches are sent to those services under your account. For AbuseIPDB and GreyNoise, the lookup and your API key are relayed through Sentinel's server to reach the service; they are not stored or logged by Sentinel's server application. The IP address is sent in the request body; in versions older than 3.9.9 it is part of the request URL, which our hosting provider's logs may record (see section 3). Your AbuseIPDB and GreyNoise API keys are sent in a header, not in the URL. Shodan is called directly from the App and takes the key as a query parameter of its own request address, so Shodan receives your key that way.</li>
